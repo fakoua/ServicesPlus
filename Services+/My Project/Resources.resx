@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TextRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="TextCopyFileLocation" xml:space="preserve">
+    <value>Copy file location</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="View" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\View.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextAddServerCaption" xml:space="preserve">
+    <value>Add Server</value>
+  </data>
+  <data name="TextProperties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="TextCSVFormat" xml:space="preserve">
+    <value>CSV Format</value>
+  </data>
+  <data name="TextStopTheService" xml:space="preserve">
+    <value>Stop the service</value>
+  </data>
+  <data name="LBLLogonAs" xml:space="preserve">
+    <value>Log on:</value>
+  </data>
+  <data name="LBLServiceStatus" xml:space="preserve">
+    <value>Service status:</value>
+  </data>
+  <data name="LBLServiceName" xml:space="preserve">
+    <value>Service name:</value>
+  </data>
+  <data name="TempServices" xml:space="preserve">
+    <value>100 Services</value>
+  </data>
+  <data name="filtering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filtering.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewList.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LBLPeakMemory" xml:space="preserve">
+    <value>Peak Memory:</value>
+  </data>
+  <data name="TextStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TextGroupByStatus" xml:space="preserve">
+    <value>Group by status</value>
+  </data>
+  <data name="exportBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exportBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextGroupByType" xml:space="preserve">
+    <value>Group by type</value>
+  </data>
+  <data name="TextTile" xml:space="preserve">
+    <value>Tile</value>
+  </data>
+  <data name="TextLargeIcon" xml:space="preserve">
+    <value>Large Icon</value>
+  </data>
+  <data name="TextStopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="TextRestartTheService" xml:space="preserve">
+    <value>Restart the service</value>
+  </data>
+  <data name="TextClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Restart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Restart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ViewIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OpenFileLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OpenFileLocation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextAnotherComputer" xml:space="preserve">
+    <value>Another Computer:</value>
+  </data>
+  <data name="TextSystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Server" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Server.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Property.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextStartType" xml:space="preserve">
+    <value>Startup Type</value>
+  </data>
+  <data name="exportWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exportWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="TextGroupBy" xml:space="preserve">
+    <value>&amp;Group by</value>
+  </data>
+  <data name="ViewWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextRunning" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="CopyFileLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CopyFileLocation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextDependencies" xml:space="preserve">
+    <value>Dependencies</value>
+  </data>
+  <data name="TextRestart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="LBLDisplayName" xml:space="preserve">
+    <value>Display name:</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Services+</value>
+  </data>
+  <data name="TextOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="InstallService" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InstallService.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TextKey" xml:space="preserve">
+    <value>KEY</value>
+  </data>
+  <data name="TextDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="TextGroupByLogOn" xml:space="preserve">
+    <value>Group by log on</value>
+  </data>
+  <data name="ViewDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewDetails.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LBLStartType" xml:space="preserve">
+    <value>Startup type:</value>
+  </data>
+  <data name="TextPerformance" xml:space="preserve">
+    <value>Performance</value>
+  </data>
+  <data name="TempPerformanceWarning" xml:space="preserve">
+    <value>This feature requires "Remote Registry" service
+Please run the service on {0}</value>
+  </data>
+  <data name="TextPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="TextSortDescending" xml:space="preserve">
+    <value>Sort Descending</value>
+  </data>
+  <data name="TextView" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="Sorting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sorting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LBLPath" xml:space="preserve">
+    <value>Path to executable:</value>
+  </data>
+  <data name="TextTestAndConnect" xml:space="preserve">
+    <value>Test &amp;&amp; Connect</value>
+  </data>
+  <data name="TextStartTheService" xml:space="preserve">
+    <value>Start the service</value>
+  </data>
+  <data name="TextStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TextLogon" xml:space="preserve">
+    <value>Log On As</value>
+  </data>
+  <data name="Start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextManual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="TextFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="TextTiles" xml:space="preserve">
+    <value>Tiles</value>
+  </data>
+  <data name="TextResumeTheService" xml:space="preserve">
+    <value>Resume the service</value>
+  </data>
+  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextFilterSearch" xml:space="preserve">
+    <value>Filter ...</value>
+  </data>
+  <data name="TextList" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="TextDisplayName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="TextApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="TextSortAscending" xml:space="preserve">
+    <value>Sort Ascending</value>
+  </data>
+  <data name="TempLocalComputer" xml:space="preserve">
+    <value>Local Computer ({0})</value>
+  </data>
+  <data name="TextGroupByStartupType" xml:space="preserve">
+    <value>Group by startup</value>
+  </data>
+  <data name="TextDisabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="LBLPause" xml:space="preserve">
+    <value>Pause:</value>
+  </data>
+  <data name="Resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowSystem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShowSystem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TempPropertiesCaption" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="Grouping" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grouping.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextServiceName" xml:space="preserve">
+    <value>ServiceName</value>
+  </data>
+  <data name="TextPaused" xml:space="preserve">
+    <value>Paused</value>
+  </data>
+  <data name="TextServiceType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading.GIF;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filter-clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter-clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextShowAll" xml:space="preserve">
+    <value>Show all</value>
+  </data>
+  <data name="TextAddServerIntro" xml:space="preserve">
+    <value>Select the computer you want Services+ to manage.</value>
+  </data>
+  <data name="TextPauseTheService" xml:space="preserve">
+    <value>Pause the service</value>
+  </data>
+  <data name="TextErrorCaption" xml:space="preserve">
+    <value>Error Details</value>
+  </data>
+  <data name="LBLMemory" xml:space="preserve">
+    <value>Memory:</value>
+  </data>
+  <data name="ViewTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ViewTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="TextResume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="TextExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="LBLDescription" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="TextStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="TextOpenFileLocation" xml:space="preserve">
+    <value>Open file location</value>
+  </data>
+  <data name="TextHtmlFormat" xml:space="preserve">
+    <value>Html Format</value>
+  </data>
+  <data name="dropdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dropdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextAutomatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="html" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\html.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+</root>

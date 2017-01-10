@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Version>
+  <AssemblyVersion>1.0.0.7</AssemblyVersion>
+  <ChangeLog>1-  [Fix] Fix Service Path name when containing space.
+2-  [Change] Remove full screen overlay window.
+3-  [Change] Enhanced user interface.
+  </ChangeLog>
+</Version>

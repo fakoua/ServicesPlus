@@ -1,0 +1,2 @@
+﻿Cancel Await functions when needed
+Install/Uninstall service

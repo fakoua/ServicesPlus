@@ -1,0 +1,10 @@
+﻿Steps to deploy to codeplex:
+
+1- Check The version.xml file
+2- Check assembly version
+3- Make sure the manifest file is applied
+4- Make sure the "Release" build is selected
+5- Make 3 copies: .exe, .zip and .7z
+6- Update the download page on codeplex and home page.
+7- Responde to discussions and issues pages if any issue were fixed or introduced with the new release
+8- Check in the code

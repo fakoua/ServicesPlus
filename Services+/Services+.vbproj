@@ -1,0 +1,1241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DC68659-BCF6-45ED-A154-776DAE1FE800}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ServicesPlus.My.MyApplication</StartupObject>
+    <RootNamespace>ServicesPlus</RootNamespace>
+    <AssemblyName>Services+</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Services+.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <CodeAnalysisRuleSet>ExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>41999,42016</NoWarn>
+    <DocumentationFile>Services+.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>41999,42016</NoWarn>
+    <DocumentationFile>Services+.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unosquare.Labs.EmbedIO, Version=1.0.17.18605, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EmbedIO.1.2.7\lib\net46\Unosquare.Labs.EmbedIO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AppSettings.vb" />
+    <Compile Include="BLL\EditServiceModel.vb" />
+    <Compile Include="BLL\EventArgs\ServiceEventArgs.vb" />
+    <Compile Include="BLL\Impersonator.vb" />
+    <Compile Include="BLL\OM\ComboEntity.vb" />
+    <Compile Include="BLL\OM\CreateServiceEntity.vb" />
+    <Compile Include="BLL\OM\WmiMethod.vb" />
+    <Compile Include="BLL\OM\ControlEntry.vb" />
+    <Compile Include="BLL\OM\Identity.vb" />
+    <Compile Include="BLL\OM\ServerEntity.vb" />
+    <Compile Include="BLL\OM\ServiceCapability.vb" />
+    <Compile Include="BLL\OM\EditServiceEntry.vb" />
+    <Compile Include="BLL\OM\UpdateEntity.vb" />
+    <Compile Include="BLL\OM\WmiReturn.vb" />
+    <Compile Include="BLL\PathParser.vb" />
+    <Compile Include="BLL\ServiceManager.vb" />
+    <Compile Include="BLL\WMI.vb" />
+    <Compile Include="BLL\EventArgs\ActionEventArgs.vb" />
+    <Compile Include="BLL\OM\ServiceColumn.vb" />
+    <Compile Include="Classes\ListViewItemComparer.vb" />
+    <Compile Include="BLL\OM\SearchBy.vb" />
+    <Compile Include="Classes\LogonComparer.vb" />
+    <Compile Include="Controls\CueTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HLoader.Designer.vb">
+      <DependentUpon>HLoader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HLoader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HR.Designer.vb">
+      <DependentUpon>HR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HR.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListHeader.Designer.vb">
+      <DependentUpon>ListHeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListHeader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListViewNf.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Loading.Designer.vb">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Loading.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MetroButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RoundButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchBox.Designer.vb">
+      <DependentUpon>SearchBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerInfo.Designer.vb">
+      <DependentUpon>ServerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServicesList.Designer.vb">
+      <DependentUpon>ServicesList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServicesList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabEx\ExButton.designer.vb">
+      <DependentUpon>ExButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabEx\ExButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabButton.designer.vb">
+      <DependentUpon>TabButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabHeader.designer.vb">
+      <DependentUpon>TabHeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabHeader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToggelButton.Designer.vb">
+      <DependentUpon>ToggelButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToggelButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Embed\ServiceController.vb" />
+    <Compile Include="Extensions.vb" />
+    <Compile Include="Forms\FrmCreateService.Designer.vb">
+      <DependentUpon>FrmCreateService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCreateService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAddServer.Designer.vb">
+      <DependentUpon>FrmAddServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAddServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDelete.Designer.vb">
+      <DependentUpon>frmDelete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDelete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEditService.Designer.vb">
+      <DependentUpon>FrmEditService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEditService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmError.Designer.vb">
+      <DependentUpon>FrmError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHttpServer.Designer.vb">
+      <DependentUpon>FrmHttpServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHttpServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUpdate.Designer.vb">
+      <DependentUpon>FrmUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MetroModal\MetroModal.Designer.vb">
+      <DependentUpon>MetroModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MetroModal\MetroModal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MetroModal\frmModal.Designer.vb">
+      <DependentUpon>frmModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MetroModal\frmModal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProperties.Designer.vb">
+      <DependentUpon>frmProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Glob.vb" />
+    <Compile Include="GlobalSuppressions.vb" />
+    <Compile Include="Forms\MainSplash.Designer.vb">
+      <DependentUpon>MainSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ModMain.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Controls\ServiceDescription.Designer.vb">
+      <DependentUpon>ServiceDescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceDescription.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLL\OM\PerformanceEntity.vb" />
+    <Compile Include="BLL\OM\ServerInfoEntity.vb" />
+    <Compile Include="BLL\OM\Service.vb" />
+    <Compile Include="NativeMethods.vb" />
+    <Compile Include="Utils\Updater.vb" />
+    <Compile Include="Utils\Util.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\HLoader.resx">
+      <DependentUpon>HLoader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HR.resx">
+      <DependentUpon>HR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListHeader.resx">
+      <DependentUpon>ListHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListViewNf.resx">
+      <DependentUpon>ListViewNf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Loading.resx">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchBox.resx">
+      <DependentUpon>SearchBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerInfo.resx">
+      <DependentUpon>ServerInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServicesList.resx">
+      <DependentUpon>ServicesList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TabEx\TabButton.resx">
+      <DependentUpon>TabButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TabEx\TabHeader.resx">
+      <DependentUpon>TabHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToggelButton.resx">
+      <DependentUpon>ToggelButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCreateService.resx">
+      <DependentUpon>FrmCreateService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddServer.resx">
+      <DependentUpon>FrmAddServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDelete.resx">
+      <DependentUpon>frmDelete.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEditService.resx">
+      <DependentUpon>FrmEditService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmError.resx">
+      <DependentUpon>FrmError.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHttpServer.resx">
+      <DependentUpon>FrmHttpServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUpdate.resx">
+      <DependentUpon>FrmUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MetroModal\frmModal.resx">
+      <DependentUpon>frmModal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProperties.resx">
+      <DependentUpon>frmProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainSplash.resx">
+      <DependentUpon>MainSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceDescription.resx">
+      <DependentUpon>ServiceDescription.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Services+.exe.manifest" />
+    <Content Include="www\css\fonts\OpenSans-Bold.ttf" />
+    <Content Include="www\css\fonts\OpenSans-Light.ttf" />
+    <Content Include="www\css\fonts\OpenSans-LightItalic.ttf" />
+    <Content Include="www\css\fonts\OpenSans-Regular.ttf" />
+    <Content Include="www\css\fonts\OpenSans-Semibold.ttf" />
+    <None Include="www\theme-material\ext\ext-watermark\fonts\ext-watermark.eot" />
+    <None Include="www\theme-material\ext\ext-watermark\fonts\ext-watermark.ttf" />
+    <None Include="www\theme-material\ext\ext-watermark\fonts\ext-watermark.woff" />
+    <None Include="www\theme-material\ext\ext-watermark\selection.json" />
+    <None Include="www\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="www\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="www\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="www\css\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="www\css\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="www\css\font-ext\fonts\ExtJS.eot" />
+    <None Include="www\css\font-ext\fonts\ExtJS.ttf" />
+    <None Include="www\css\font-ext\fonts\ExtJS.woff" />
+    <None Include="www\theme-material\fonts\MaterialIcons-Regular.ttf" />
+    <None Include="www\theme-material\fonts\roboto\Roboto-Bold.ttf" />
+    <None Include="www\theme-material\fonts\roboto\Roboto-Italic.ttf" />
+    <None Include="www\theme-material\fonts\roboto\Roboto-Light.ttf" />
+    <None Include="www\theme-material\fonts\roboto\Roboto-Medium.ttf" />
+    <None Include="www\theme-material\fonts\roboto\Roboto-Regular.ttf" />
+    <None Include="www\theme-material\images\pictos\pictos-web.eot" />
+    <None Include="www\theme-material\images\pictos\pictos-web.ttf" />
+    <None Include="www\theme-material\images\pictos\pictos-web.woff" />
+    <None Include="www\theme-material\theme-base\Readme.md" />
+    <None Include="www\theme-material\theme-neptune\images\pictos\pictos-web.eot" />
+    <None Include="www\theme-material\theme-neptune\images\pictos\pictos-web.ttf" />
+    <None Include="www\theme-material\theme-neptune\images\pictos\pictos-web.woff" />
+    <None Include="www\theme-material\theme-neptune\Readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeforeDeploy.txt" />
+    <Content Include="Impersonator.txt" />
+    <Content Include="PostBuild.txt" />
+    <Content Include="www\css\images\loadmask\loading.gif" />
+    <Content Include="www\css\splus.css" />
+    <Content Include="www\css\theme-triton-all_1.css" />
+    <Content Include="www\css\theme-triton-all_2.css" />
+    <Content Include="www\default.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="www\js\ext-all.js" />
+    <Content Include="www\js\ext-modern-all.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="www\theme-material\css-vars.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="www\theme-material\ext\ext-watermark\demo-files\demo.css" />
+    <Content Include="www\theme-material\ext\ext-watermark\demo-files\demo.js" />
+    <Content Include="www\theme-material\ext\ext-watermark\demo.html" />
+    <Content Include="www\theme-material\ext\ext-watermark\fonts\ext-watermark.svg" />
+    <Content Include="www\theme-material\ext\ext-watermark\Read Me.txt" />
+    <Content Include="www\theme-material\ext\ext-watermark\style.css" />
+    <Content Include="www\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="www\css\font-ext\fonts\ExtJS.svg" />
+    <Content Include="www\theme-material\images\check.png" />
+    <Content Include="www\theme-material\images\clear_icon.png" />
+    <Content Include="www\theme-material\images\disclosure.png" />
+    <Content Include="www\theme-material\images\disclosure2.png" />
+    <Content Include="www\theme-material\images\dotgrid.png" />
+    <Content Include="www\theme-material\images\loading.gif" />
+    <Content Include="www\theme-material\images\pictos\action.png" />
+    <Content Include="www\theme-material\images\pictos\add.png" />
+    <Content Include="www\theme-material\images\pictos\add1.png" />
+    <Content Include="www\theme-material\images\pictos\address_book.png" />
+    <Content Include="www\theme-material\images\pictos\add_black.png" />
+    <Content Include="www\theme-material\images\pictos\arrow_down.png" />
+    <Content Include="www\theme-material\images\pictos\arrow_left.png" />
+    <Content Include="www\theme-material\images\pictos\arrow_right.png" />
+    <Content Include="www\theme-material\images\pictos\arrow_up.png" />
+    <Content Include="www\theme-material\images\pictos\at.png" />
+    <Content Include="www\theme-material\images\pictos\atom.png" />
+    <Content Include="www\theme-material\images\pictos\attachment.png" />
+    <Content Include="www\theme-material\images\pictos\attachment2.png" />
+    <Content Include="www\theme-material\images\pictos\attachment3.png" />
+    <Content Include="www\theme-material\images\pictos\attachment_black.png" />
+    <Content Include="www\theme-material\images\pictos\back.png" />
+    <Content Include="www\theme-material\images\pictos\backspace.png" />
+    <Content Include="www\theme-material\images\pictos\battery_full.png" />
+    <Content Include="www\theme-material\images\pictos\battery_low.png" />
+    <Content Include="www\theme-material\images\pictos\battery_power.png" />
+    <Content Include="www\theme-material\images\pictos\blank.png" />
+    <Content Include="www\theme-material\images\pictos\bolt.png" />
+    <Content Include="www\theme-material\images\pictos\bolt_side.png" />
+    <Content Include="www\theme-material\images\pictos\bookmark1.png" />
+    <Content Include="www\theme-material\images\pictos\bookmark2.png" />
+    <Content Include="www\theme-material\images\pictos\bookmarks.png" />
+    <Content Include="www\theme-material\images\pictos\bookmark_black.png" />
+    <Content Include="www\theme-material\images\pictos\briefcase1.png" />
+    <Content Include="www\theme-material\images\pictos\briefcase2.png" />
+    <Content Include="www\theme-material\images\pictos\brightness1.png" />
+    <Content Include="www\theme-material\images\pictos\brightness2.png" />
+    <Content Include="www\theme-material\images\pictos\broadcast.png" />
+    <Content Include="www\theme-material\images\pictos\bug.png" />
+    <Content Include="www\theme-material\images\pictos\bulb.png" />
+    <Content Include="www\theme-material\images\pictos\bullseye1.png" />
+    <Content Include="www\theme-material\images\pictos\bullseye2.png" />
+    <Content Include="www\theme-material\images\pictos\calendar.png" />
+    <Content Include="www\theme-material\images\pictos\calendar2.png" />
+    <Content Include="www\theme-material\images\pictos\calendar_add.png" />
+    <Content Include="www\theme-material\images\pictos\card1.png" />
+    <Content Include="www\theme-material\images\pictos\card2.png" />
+    <Content Include="www\theme-material\images\pictos\chart1.png" />
+    <Content Include="www\theme-material\images\pictos\chart2.png" />
+    <Content Include="www\theme-material\images\pictos\chart3.png" />
+    <Content Include="www\theme-material\images\pictos\chat.png" />
+    <Content Include="www\theme-material\images\pictos\chat1.png" />
+    <Content Include="www\theme-material\images\pictos\chat2.png" />
+    <Content Include="www\theme-material\images\pictos\chat3.png" />
+    <Content Include="www\theme-material\images\pictos\chat4.png" />
+    <Content Include="www\theme-material\images\pictos\chat_black1.png" />
+    <Content Include="www\theme-material\images\pictos\chat_black2.png" />
+    <Content Include="www\theme-material\images\pictos\check1.png" />
+    <Content Include="www\theme-material\images\pictos\check2.png" />
+    <Content Include="www\theme-material\images\pictos\check_black1.png" />
+    <Content Include="www\theme-material\images\pictos\check_black2.png" />
+    <Content Include="www\theme-material\images\pictos\check_dotted.png" />
+    <Content Include="www\theme-material\images\pictos\circle.png" />
+    <Content Include="www\theme-material\images\pictos\circle2.png" />
+    <Content Include="www\theme-material\images\pictos\circle3.png" />
+    <Content Include="www\theme-material\images\pictos\circle4.png" />
+    <Content Include="www\theme-material\images\pictos\clash.png" />
+    <Content Include="www\theme-material\images\pictos\cloud.png" />
+    <Content Include="www\theme-material\images\pictos\cloud_black.png" />
+    <Content Include="www\theme-material\images\pictos\cloud_black_upload1.png" />
+    <Content Include="www\theme-material\images\pictos\cloud_black_upload2.png" />
+    <Content Include="www\theme-material\images\pictos\cloud_bolt.png" />
+    <Content Include="www\theme-material\images\pictos\cloud_download.png" />
+    <Content Include="www\theme-material\images\pictos\code1.png" />
+    <Content Include="www\theme-material\images\pictos\code2.png" />
+    <Content Include="www\theme-material\images\pictos\code3.png" />
+    <Content Include="www\theme-material\images\pictos\compass1.png" />
+    <Content Include="www\theme-material\images\pictos\compass2.png" />
+    <Content Include="www\theme-material\images\pictos\compass3.png" />
+    <Content Include="www\theme-material\images\pictos\compose.png" />
+    <Content Include="www\theme-material\images\pictos\compose1.png" />
+    <Content Include="www\theme-material\images\pictos\compose2.png" />
+    <Content Include="www\theme-material\images\pictos\compose3.png" />
+    <Content Include="www\theme-material\images\pictos\compose_black.png" />
+    <Content Include="www\theme-material\images\pictos\contract.png" />
+    <Content Include="www\theme-material\images\pictos\cube.png" />
+    <Content Include="www\theme-material\images\pictos\data.png" />
+    <Content Include="www\theme-material\images\pictos\delete.png" />
+    <Content Include="www\theme-material\images\pictos\delete1.png" />
+    <Content Include="www\theme-material\images\pictos\delete_black1.png" />
+    <Content Include="www\theme-material\images\pictos\delete_black2.png" />
+    <Content Include="www\theme-material\images\pictos\doc.png" />
+    <Content Include="www\theme-material\images\pictos\doc2.png" />
+    <Content Include="www\theme-material\images\pictos\docs1.png" />
+    <Content Include="www\theme-material\images\pictos\docs2.png" />
+    <Content Include="www\theme-material\images\pictos\docs_black1.png" />
+    <Content Include="www\theme-material\images\pictos\docs_black2.png" />
+    <Content Include="www\theme-material\images\pictos\doc_black.png" />
+    <Content Include="www\theme-material\images\pictos\doc_black_landscape.png" />
+    <Content Include="www\theme-material\images\pictos\doc_compose1.png" />
+    <Content Include="www\theme-material\images\pictos\doc_compose2.png" />
+    <Content Include="www\theme-material\images\pictos\doc_delete.png" />
+    <Content Include="www\theme-material\images\pictos\doc_down.png" />
+    <Content Include="www\theme-material\images\pictos\doc_drawer.png" />
+    <Content Include="www\theme-material\images\pictos\doc_list.png" />
+    <Content Include="www\theme-material\images\pictos\doc_new.png" />
+    <Content Include="www\theme-material\images\pictos\doc_send.png" />
+    <Content Include="www\theme-material\images\pictos\doc_up.png" />
+    <Content Include="www\theme-material\images\pictos\download.png" />
+    <Content Include="www\theme-material\images\pictos\download1.png" />
+    <Content Include="www\theme-material\images\pictos\download2.png" />
+    <Content Include="www\theme-material\images\pictos\download_screen.png" />
+    <Content Include="www\theme-material\images\pictos\eject.png" />
+    <Content Include="www\theme-material\images\pictos\empty1.png" />
+    <Content Include="www\theme-material\images\pictos\empty2.png" />
+    <Content Include="www\theme-material\images\pictos\equalizer1.png" />
+    <Content Include="www\theme-material\images\pictos\equalizer2.png" />
+    <Content Include="www\theme-material\images\pictos\event_complete.png" />
+    <Content Include="www\theme-material\images\pictos\expand.png" />
+    <Content Include="www\theme-material\images\pictos\favorites.png" />
+    <Content Include="www\theme-material\images\pictos\favorites1.png" />
+    <Content Include="www\theme-material\images\pictos\favorites_circle.png" />
+    <Content Include="www\theme-material\images\pictos\fforward.png" />
+    <Content Include="www\theme-material\images\pictos\find.png" />
+    <Content Include="www\theme-material\images\pictos\flag.png" />
+    <Content Include="www\theme-material\images\pictos\flickr2.png" />
+    <Content Include="www\theme-material\images\pictos\folder.png" />
+    <Content Include="www\theme-material\images\pictos\folder_add.png" />
+    <Content Include="www\theme-material\images\pictos\folder_black.png" />
+    <Content Include="www\theme-material\images\pictos\folder_black_open.png" />
+    <Content Include="www\theme-material\images\pictos\folder_delete.png" />
+    <Content Include="www\theme-material\images\pictos\folder_delete2.png" />
+    <Content Include="www\theme-material\images\pictos\folder_lock.png" />
+    <Content Include="www\theme-material\images\pictos\folder_open2.png" />
+    <Content Include="www\theme-material\images\pictos\font.png" />
+    <Content Include="www\theme-material\images\pictos\forbidden.png" />
+    <Content Include="www\theme-material\images\pictos\forward_black.png" />
+    <Content Include="www\theme-material\images\pictos\globe1.png" />
+    <Content Include="www\theme-material\images\pictos\globe2.png" />
+    <Content Include="www\theme-material\images\pictos\globe_black.png" />
+    <Content Include="www\theme-material\images\pictos\headphones.png" />
+    <Content Include="www\theme-material\images\pictos\heart.png" />
+    <Content Include="www\theme-material\images\pictos\heart_circle.png" />
+    <Content Include="www\theme-material\images\pictos\help.png" />
+    <Content Include="www\theme-material\images\pictos\help_black.png" />
+    <Content Include="www\theme-material\images\pictos\home.png" />
+    <Content Include="www\theme-material\images\pictos\home2.png" />
+    <Content Include="www\theme-material\images\pictos\hot.png" />
+    <Content Include="www\theme-material\images\pictos\inbox1.png" />
+    <Content Include="www\theme-material\images\pictos\inbox2.png" />
+    <Content Include="www\theme-material\images\pictos\inbox3.png" />
+    <Content Include="www\theme-material\images\pictos\infinite.png" />
+    <Content Include="www\theme-material\images\pictos\infinite2.png" />
+    <Content Include="www\theme-material\images\pictos\info.png" />
+    <Content Include="www\theme-material\images\pictos\info2.png" />
+    <Content Include="www\theme-material\images\pictos\info_plain.png" />
+    <Content Include="www\theme-material\images\pictos\info_plain2.png" />
+    <Content Include="www\theme-material\images\pictos\json.png" />
+    <Content Include="www\theme-material\images\pictos\lab.png" />
+    <Content Include="www\theme-material\images\pictos\layout.png" />
+    <Content Include="www\theme-material\images\pictos\link1.png" />
+    <Content Include="www\theme-material\images\pictos\link2.png" />
+    <Content Include="www\theme-material\images\pictos\link_black.png" />
+    <Content Include="www\theme-material\images\pictos\list.png" />
+    <Content Include="www\theme-material\images\pictos\locate.png" />
+    <Content Include="www\theme-material\images\pictos\locate1.png" />
+    <Content Include="www\theme-material\images\pictos\locate2.png" />
+    <Content Include="www\theme-material\images\pictos\locate3.png" />
+    <Content Include="www\theme-material\images\pictos\locate4.png" />
+    <Content Include="www\theme-material\images\pictos\lock_closed.png" />
+    <Content Include="www\theme-material\images\pictos\lock_open.png" />
+    <Content Include="www\theme-material\images\pictos\look.png" />
+    <Content Include="www\theme-material\images\pictos\loop.png" />
+    <Content Include="www\theme-material\images\pictos\loop2.png" />
+    <Content Include="www\theme-material\images\pictos\loop_circle.png" />
+    <Content Include="www\theme-material\images\pictos\magic.png" />
+    <Content Include="www\theme-material\images\pictos\mail.png" />
+    <Content Include="www\theme-material\images\pictos\mail1.png" />
+    <Content Include="www\theme-material\images\pictos\mail2.png" />
+    <Content Include="www\theme-material\images\pictos\mail3.png" />
+    <Content Include="www\theme-material\images\pictos\mail4.png" />
+    <Content Include="www\theme-material\images\pictos\mail5.png" />
+    <Content Include="www\theme-material\images\pictos\maps.png" />
+    <Content Include="www\theme-material\images\pictos\mic.png" />
+    <Content Include="www\theme-material\images\pictos\minus1.png" />
+    <Content Include="www\theme-material\images\pictos\minus2.png" />
+    <Content Include="www\theme-material\images\pictos\minus_black1.png" />
+    <Content Include="www\theme-material\images\pictos\minus_black2.png" />
+    <Content Include="www\theme-material\images\pictos\monitor1.png" />
+    <Content Include="www\theme-material\images\pictos\monitor2.png" />
+    <Content Include="www\theme-material\images\pictos\monitor3.png" />
+    <Content Include="www\theme-material\images\pictos\monitor4.png" />
+    <Content Include="www\theme-material\images\pictos\more.png" />
+    <Content Include="www\theme-material\images\pictos\more2.png" />
+    <Content Include="www\theme-material\images\pictos\mouse.png" />
+    <Content Include="www\theme-material\images\pictos\move.png" />
+    <Content Include="www\theme-material\images\pictos\music1.png" />
+    <Content Include="www\theme-material\images\pictos\music2.png" />
+    <Content Include="www\theme-material\images\pictos\nodes1.png" />
+    <Content Include="www\theme-material\images\pictos\nodes2.png" />
+    <Content Include="www\theme-material\images\pictos\note1.png" />
+    <Content Include="www\theme-material\images\pictos\note2.png" />
+    <Content Include="www\theme-material\images\pictos\note3.png" />
+    <Content Include="www\theme-material\images\pictos\note_black.png" />
+    <Content Include="www\theme-material\images\pictos\nuclear.png" />
+    <Content Include="www\theme-material\images\pictos\organize.png" />
+    <Content Include="www\theme-material\images\pictos\outbox.png" />
+    <Content Include="www\theme-material\images\pictos\pause.png" />
+    <Content Include="www\theme-material\images\pictos\phone1.png" />
+    <Content Include="www\theme-material\images\pictos\phone2.png" />
+    <Content Include="www\theme-material\images\pictos\phone_black.png" />
+    <Content Include="www\theme-material\images\pictos\phone_ring1.png" />
+    <Content Include="www\theme-material\images\pictos\phone_ring2.png" />
+    <Content Include="www\theme-material\images\pictos\photo1.png" />
+    <Content Include="www\theme-material\images\pictos\photo2.png" />
+    <Content Include="www\theme-material\images\pictos\photo3.png" />
+    <Content Include="www\theme-material\images\pictos\photos1.png" />
+    <Content Include="www\theme-material\images\pictos\photos2.png" />
+    <Content Include="www\theme-material\images\pictos\photos4.png" />
+    <Content Include="www\theme-material\images\pictos\photo_black1.png" />
+    <Content Include="www\theme-material\images\pictos\photo_black2.png" />
+    <Content Include="www\theme-material\images\pictos\pictos-web.svg" />
+    <Content Include="www\theme-material\images\pictos\piechart.png" />
+    <Content Include="www\theme-material\images\pictos\play1.png" />
+    <Content Include="www\theme-material\images\pictos\play2.png" />
+    <Content Include="www\theme-material\images\pictos\play_black1.png" />
+    <Content Include="www\theme-material\images\pictos\play_black2.png" />
+    <Content Include="www\theme-material\images\pictos\podcast.png" />
+    <Content Include="www\theme-material\images\pictos\power_on.png" />
+    <Content Include="www\theme-material\images\pictos\power_socket.png" />
+    <Content Include="www\theme-material\images\pictos\print.png" />
+    <Content Include="www\theme-material\images\pictos\print2.png" />
+    <Content Include="www\theme-material\images\pictos\quote1.png" />
+    <Content Include="www\theme-material\images\pictos\quote2.png" />
+    <Content Include="www\theme-material\images\pictos\quote_black1.png" />
+    <Content Include="www\theme-material\images\pictos\quote_black2.png" />
+    <Content Include="www\theme-material\images\pictos\quote_black3.png" />
+    <Content Include="www\theme-material\images\pictos\refresh.png" />
+    <Content Include="www\theme-material\images\pictos\refresh1.png" />
+    <Content Include="www\theme-material\images\pictos\refresh2.png" />
+    <Content Include="www\theme-material\images\pictos\refresh3.png" />
+    <Content Include="www\theme-material\images\pictos\refresh5.png" />
+    <Content Include="www\theme-material\images\pictos\reply.png" />
+    <Content Include="www\theme-material\images\pictos\replytoall.png" />
+    <Content Include="www\theme-material\images\pictos\resize.png" />
+    <Content Include="www\theme-material\images\pictos\resize_black.png" />
+    <Content Include="www\theme-material\images\pictos\rewind.png" />
+    <Content Include="www\theme-material\images\pictos\right.png" />
+    <Content Include="www\theme-material\images\pictos\right2.png" />
+    <Content Include="www\theme-material\images\pictos\rss.png" />
+    <Content Include="www\theme-material\images\pictos\rss2.png" />
+    <Content Include="www\theme-material\images\pictos\rss_black.png" />
+    <Content Include="www\theme-material\images\pictos\rss_black1.png" />
+    <Content Include="www\theme-material\images\pictos\rss_black2.png" />
+    <Content Include="www\theme-material\images\pictos\screens.png" />
+    <Content Include="www\theme-material\images\pictos\search.png" />
+    <Content Include="www\theme-material\images\pictos\search1.png" />
+    <Content Include="www\theme-material\images\pictos\search2.png" />
+    <Content Include="www\theme-material\images\pictos\search_black.png" />
+    <Content Include="www\theme-material\images\pictos\server.png" />
+    <Content Include="www\theme-material\images\pictos\servers.png" />
+    <Content Include="www\theme-material\images\pictos\settings.png" />
+    <Content Include="www\theme-material\images\pictos\settings1.png" />
+    <Content Include="www\theme-material\images\pictos\settings10.png" />
+    <Content Include="www\theme-material\images\pictos\settings11.png" />
+    <Content Include="www\theme-material\images\pictos\settings3.png" />
+    <Content Include="www\theme-material\images\pictos\settings4.png" />
+    <Content Include="www\theme-material\images\pictos\settings5.png" />
+    <Content Include="www\theme-material\images\pictos\settings6.png" />
+    <Content Include="www\theme-material\images\pictos\settings7.png" />
+    <Content Include="www\theme-material\images\pictos\settings8.png" />
+    <Content Include="www\theme-material\images\pictos\settings9.png" />
+    <Content Include="www\theme-material\images\pictos\settings_black.png" />
+    <Content Include="www\theme-material\images\pictos\share.png" />
+    <Content Include="www\theme-material\images\pictos\shield1.png" />
+    <Content Include="www\theme-material\images\pictos\shield2.png" />
+    <Content Include="www\theme-material\images\pictos\shop1.png" />
+    <Content Include="www\theme-material\images\pictos\shop2.png" />
+    <Content Include="www\theme-material\images\pictos\shuffle.png" />
+    <Content Include="www\theme-material\images\pictos\sign_backforth.png" />
+    <Content Include="www\theme-material\images\pictos\sign_cross.png" />
+    <Content Include="www\theme-material\images\pictos\sign_leftright.png" />
+    <Content Include="www\theme-material\images\pictos\sign_leftright2.png" />
+    <Content Include="www\theme-material\images\pictos\sign_split.png" />
+    <Content Include="www\theme-material\images\pictos\sign_switch.png" />
+    <Content Include="www\theme-material\images\pictos\sign_uturn.png" />
+    <Content Include="www\theme-material\images\pictos\spaces1.png" />
+    <Content Include="www\theme-material\images\pictos\spaces2.png" />
+    <Content Include="www\theme-material\images\pictos\speedometer1.png" />
+    <Content Include="www\theme-material\images\pictos\speedometer2.png" />
+    <Content Include="www\theme-material\images\pictos\speedometer_black1.png" />
+    <Content Include="www\theme-material\images\pictos\speedometer_black2.png" />
+    <Content Include="www\theme-material\images\pictos\star.png" />
+    <Content Include="www\theme-material\images\pictos\stop.png" />
+    <Content Include="www\theme-material\images\pictos\stop1.png" />
+    <Content Include="www\theme-material\images\pictos\stop2.png" />
+    <Content Include="www\theme-material\images\pictos\sync.png" />
+    <Content Include="www\theme-material\images\pictos\tabbed_book.png" />
+    <Content Include="www\theme-material\images\pictos\tag.png" />
+    <Content Include="www\theme-material\images\pictos\tags.png" />
+    <Content Include="www\theme-material\images\pictos\tag_black.png" />
+    <Content Include="www\theme-material\images\pictos\team.png" />
+    <Content Include="www\theme-material\images\pictos\team1.png" />
+    <Content Include="www\theme-material\images\pictos\time.png" />
+    <Content Include="www\theme-material\images\pictos\time_repeat.png" />
+    <Content Include="www\theme-material\images\pictos\trash.png" />
+    <Content Include="www\theme-material\images\pictos\trash2.png" />
+    <Content Include="www\theme-material\images\pictos\trash_black.png" />
+    <Content Include="www\theme-material\images\pictos\tree.png" />
+    <Content Include="www\theme-material\images\pictos\tv.png" />
+    <Content Include="www\theme-material\images\pictos\tweak.png" />
+    <Content Include="www\theme-material\images\pictos\twitter1.png" />
+    <Content Include="www\theme-material\images\pictos\twitter2.png" />
+    <Content Include="www\theme-material\images\pictos\up1.png" />
+    <Content Include="www\theme-material\images\pictos\up2.png" />
+    <Content Include="www\theme-material\images\pictos\upload2.png" />
+    <Content Include="www\theme-material\images\pictos\up_black.png" />
+    <Content Include="www\theme-material\images\pictos\user.png" />
+    <Content Include="www\theme-material\images\pictos\user3.png" />
+    <Content Include="www\theme-material\images\pictos\user_add.png" />
+    <Content Include="www\theme-material\images\pictos\user_business.png" />
+    <Content Include="www\theme-material\images\pictos\user_fave.png" />
+    <Content Include="www\theme-material\images\pictos\user_list.png" />
+    <Content Include="www\theme-material\images\pictos\user_list2.png" />
+    <Content Include="www\theme-material\images\pictos\user_remote1.png" />
+    <Content Include="www\theme-material\images\pictos\user_remove2.png" />
+    <Content Include="www\theme-material\images\pictos\user_send.png" />
+    <Content Include="www\theme-material\images\pictos\video.png" />
+    <Content Include="www\theme-material\images\pictos\video_black1.png" />
+    <Content Include="www\theme-material\images\pictos\video_black2.png" />
+    <Content Include="www\theme-material\images\pictos\volume.png" />
+    <Content Include="www\theme-material\images\pictos\volume_black.png" />
+    <Content Include="www\theme-material\images\pictos\volume_down.png" />
+    <Content Include="www\theme-material\images\pictos\volume_mute.png" />
+    <Content Include="www\theme-material\images\pictos\volume_up.png" />
+    <Content Include="www\theme-material\images\pictos\warning_black.png" />
+    <Content Include="www\theme-material\images\pictos\warning_dotted.png" />
+    <Content Include="www\theme-material\images\pictos\wifi.png" />
+    <Content Include="www\theme-material\images\pictos\wifi2.png" />
+    <Content Include="www\theme-material\images\pictos\wifi3.png" />
+    <Content Include="www\theme-material\images\pictos\wifi4.png" />
+    <Content Include="www\theme-material\images\pictos\window.png" />
+    <Content Include="www\theme-material\images\pullarrow.png" />
+    <Content Include="www\theme-material\images\select_mask.png" />
+    <Content Include="www\theme-material\images\tip2_left.png" />
+    <Content Include="www\theme-material\images\tip2_right.png" />
+    <Content Include="www\theme-material\images\tip_bottom.png" />
+    <Content Include="www\theme-material\images\tip_left.png" />
+    <Content Include="www\theme-material\images\tip_right.png" />
+    <Content Include="www\theme-material\images\tip_top.png" />
+    <Content Include="www\theme-material\images\togglebg.png" />
+    <Content Include="www\theme-material\images\togglemask.png" />
+    <Content Include="www\theme-material\images\togglethumb.png" />
+    <Content Include="www\theme-material\images\togglethumbbg.png" />
+    <Content Include="www\theme-material\images\togglethumbmask.png" />
+    <Content Include="www\theme-material\images\trackmask_outer.png" />
+    <Content Include="www\theme-material\images\tree\loading.gif" />
+    <Content Include="www\theme-material\theme-base\images\tree\loading.gif" />
+    <Content Include="www\theme-material\theme-material-all.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="www\theme-material\theme-neptune\images\check.png" />
+    <Content Include="www\theme-material\theme-neptune\images\clear_icon.png" />
+    <Content Include="www\theme-material\theme-neptune\images\disclosure.png" />
+    <Content Include="www\theme-material\theme-neptune\images\disclosure2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\dotgrid.png" />
+    <Content Include="www\theme-material\theme-neptune\images\loading.gif" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\action.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\add.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\add1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\address_book.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\add_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\arrow_down.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\arrow_left.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\arrow_right.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\arrow_up.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\at.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\atom.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\attachment.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\attachment2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\attachment3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\attachment_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\back.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\backspace.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\battery_full.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\battery_low.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\battery_power.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\blank.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bolt.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bolt_side.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bookmark1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bookmark2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bookmarks.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bookmark_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\briefcase1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\briefcase2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\brightness1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\brightness2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\broadcast.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bug.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bulb.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bullseye1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\bullseye2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\calendar.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\calendar2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\calendar_add.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\card1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\card2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chart1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chart2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chart3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\chat_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\check1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\check2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\check_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\check_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\check_dotted.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\circle.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\circle2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\circle3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\circle4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\clash.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cloud.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cloud_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cloud_black_upload1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cloud_black_upload2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cloud_bolt.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cloud_download.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\code1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\code2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\code3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compass1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compass2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compass3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compose.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compose1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compose2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compose3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\compose_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\contract.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\cube.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\data.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\delete.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\delete1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\delete_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\delete_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\docs1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\docs2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\docs_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\docs_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_black_landscape.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_compose1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_compose2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_delete.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_down.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_drawer.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_list.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_new.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_send.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\doc_up.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\download.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\download1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\download2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\download_screen.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\eject.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\empty1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\empty2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\equalizer1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\equalizer2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\event_complete.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\expand.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\favorites.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\favorites1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\favorites_circle.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\fforward.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\find.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\flag.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\flickr2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_add.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_black_open.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_delete.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_delete2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_lock.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\folder_open2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\font.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\forbidden.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\forward_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\globe1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\globe2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\globe_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\headphones.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\heart.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\heart_circle.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\help.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\help_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\home.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\home2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\hot.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\inbox1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\inbox2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\inbox3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\infinite.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\infinite2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\info.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\info2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\info_plain.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\info_plain2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\json.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\lab.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\layout.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\link1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\link2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\link_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\list.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\locate.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\locate1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\locate2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\locate3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\locate4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\lock_closed.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\lock_open.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\look.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\loop.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\loop2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\loop_circle.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\magic.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mail.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mail1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mail2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mail3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mail4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mail5.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\maps.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mic.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\minus1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\minus2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\minus_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\minus_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\monitor1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\monitor2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\monitor3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\monitor4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\more.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\more2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\mouse.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\move.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\music1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\music2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\nodes1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\nodes2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\note1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\note2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\note3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\note_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\nuclear.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\organize.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\outbox.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\pause.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\phone1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\phone2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\phone_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\phone_ring1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\phone_ring2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photo1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photo2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photo3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photos1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photos2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photos4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photo_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\photo_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\pictos-web.svg" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\piechart.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\play1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\play2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\play_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\play_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\podcast.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\power_on.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\power_socket.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\print.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\print2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\quote1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\quote2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\quote_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\quote_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\quote_black3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\refresh.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\refresh1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\refresh2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\refresh3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\refresh5.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\reply.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\replytoall.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\resize.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\resize_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\rewind.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\right.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\right2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\rss.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\rss2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\rss_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\rss_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\rss_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\screens.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\search.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\search1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\search2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\search_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\server.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\servers.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings10.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings11.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings5.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings6.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings7.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings8.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings9.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\settings_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\share.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\shield1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\shield2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\shop1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\shop2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\shuffle.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_backforth.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_cross.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_leftright.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_leftright2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_split.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_switch.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sign_uturn.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\spaces1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\spaces2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\speedometer1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\speedometer2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\speedometer_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\speedometer_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\star.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\stop.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\stop1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\stop2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\sync.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tabbed_book.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tag.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tags.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tag_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\team.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\team1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\time.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\time_repeat.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\trash.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\trash2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\trash_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tree.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tv.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\tweak.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\twitter1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\twitter2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\up1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\up2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\upload2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\up_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_add.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_business.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_fave.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_list.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_list2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_remote1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_remove2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\user_send.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\video.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\video_black1.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\video_black2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\volume.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\volume_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\volume_down.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\volume_mute.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\volume_up.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\warning_black.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\warning_dotted.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\wifi.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\wifi2.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\wifi3.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\wifi4.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pictos\window.png" />
+    <Content Include="www\theme-material\theme-neptune\images\pullarrow.png" />
+    <Content Include="www\theme-material\theme-neptune\images\select_mask.png" />
+    <Content Include="www\theme-material\theme-neptune\images\tip2_left.png" />
+    <Content Include="www\theme-material\theme-neptune\images\tip2_right.png" />
+    <Content Include="www\theme-material\theme-neptune\images\tip_bottom.png" />
+    <Content Include="www\theme-material\theme-neptune\images\tip_left.png" />
+    <Content Include="www\theme-material\theme-neptune\images\tip_right.png" />
+    <Content Include="www\theme-material\theme-neptune\images\tip_top.png" />
+    <Content Include="www\theme-material\theme-neptune\images\togglebg.png" />
+    <Content Include="www\theme-material\theme-neptune\images\togglemask.png" />
+    <Content Include="www\theme-material\theme-neptune\images\togglethumb.png" />
+    <Content Include="www\theme-material\theme-neptune\images\togglethumbbg.png" />
+    <Content Include="www\theme-material\theme-neptune\images\togglethumbmask.png" />
+    <Content Include="www\theme-material\theme-neptune\images\trackmask_outer.png" />
+    <None Include="Resources\ShowSystem.png" />
+    <None Include="Resources\InstallService.png" />
+    <None Include="Resources\delete.png" />
+    <Content Include="Roadmap.txt" />
+    <Content Include="Version.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Resources\OpenFileLocation.png" />
+    <None Include="Resources\CopyFileLocation.png" />
+    <Content Include="Services+.ico" />
+    <None Include="Resources\ViewTile.png" />
+    <None Include="Resources\ViewDetails.png" />
+    <None Include="Resources\ViewList.png" />
+    <None Include="Resources\ViewIcon.png" />
+    <None Include="Resources\ViewWhite.png" />
+    <None Include="Resources\View.png" />
+    <None Include="Resources\filtering.png" />
+    <None Include="Resources\Sorting.png" />
+    <None Include="Resources\Grouping.png" />
+    <None Include="Resources\html.png" />
+    <None Include="Resources\csv.png" />
+    <None Include="Resources\exportBlue.png" />
+    <None Include="Resources\exportWhite.png" />
+    <None Include="Resources\Property.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\dropdown.png" />
+    <None Include="Resources\Restart.png" />
+    <None Include="Resources\Resume.png" />
+    <None Include="Resources\Pause.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Start.png" />
+    <None Include="Resources\filter-clear.png" />
+    <None Include="Resources\Server.png" />
+    <None Include="Resources\Loading.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\OM\Enums\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\mt.exe" -manifest "$(ProjectDir)$(TargetName).exe.manifest"  –outputresource:"$(TargetDir)$(TargetFileName)";</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
