@@ -140,8 +140,7 @@ Namespace Forms
         Dim Server As WebServer
 
         Private Async Sub StartWebServer(portNumber As Integer)
-            Server = New WebServer("http://localhost:88", New SimpleConsoleLog, RoutingStrategy.Regex).WithStaticFolderAt("C:\Users\sameh\Source\Workspaces\ServicesPP\Services+\Services+\www", "default.html")
-            'Server.RegisterModule(New StaticFilesModule("C:\CodePlex\ServicesPP\Services+\Services+\www"))
+            Server = New WebServer("http://localhost:88", New SimpleConsoleLog, RoutingStrategy.Regex).WithStaticFolderAt("C:\GitHub\ServicesPlus\ServicesPlus\Services+\www", "default.html")
             Server.RegisterModule(New WebApiModule)
             Server.Module(Of WebApiModule).RegisterController(Of ServiceController)()
             Await Server.RunAsync
