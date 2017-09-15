@@ -139,6 +139,7 @@ Namespace Forms
         Dim Server As WebServer
 
         Private Async Sub StartWebServer(portNumber As Integer)
+            'TODO: change the root folder
             Server = New WebServer("http://localhost:89", RoutingStrategy.Regex).WithStaticFolderAt("C:\GitHub\ServicesPlus\Services+\www", "default.html")
             Server.RegisterModule(New WebApiModule)
             Server.Module(Of WebApiModule).RegisterController(Of ServiceController)()
