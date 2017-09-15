@@ -3,13 +3,12 @@ Imports ServicesPlus.Controls
 Imports ServicesPlus.Modules
 Imports ServicesPlus.Utils
 Imports Unosquare.Labs.EmbedIO
-Imports Unosquare.Labs.EmbedIO.Log
+Imports Unosquare.Labs.EmbedIO.Constants
 Imports Unosquare.Labs.EmbedIO.Modules
 
 Namespace Forms
 
     Friend Class FrmMain
-
 
         Private Async Sub TabHeader1_OnAdding(sender As Object, e As EventArgs) Handles TabHeader1.OnAdding
             Trace()
@@ -140,7 +139,7 @@ Namespace Forms
         Dim Server As WebServer
 
         Private Async Sub StartWebServer(portNumber As Integer)
-            Server = New WebServer("http://localhost:88", New SimpleConsoleLog, RoutingStrategy.Regex).WithStaticFolderAt("C:\GitHub\ServicesPlus\ServicesPlus\Services+\www", "default.html")
+            Server = New WebServer("http://localhost:89", RoutingStrategy.Regex).WithStaticFolderAt("C:\GitHub\ServicesPlus\Services+\www", "default.html")
             Server.RegisterModule(New WebApiModule)
             Server.Module(Of WebApiModule).RegisterController(Of ServiceController)()
             Await Server.RunAsync
