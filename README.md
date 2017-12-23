@@ -1,4 +1,6 @@
-Services+
+[![Build status](https://ci.appveyor.com/api/projects/status/465ha93avpcbh125?svg=true)](https://ci.appveyor.com/project/fakoua/servicesplus)
+
+# Services+
 ============
 
 Advanced Windows Service Manager
