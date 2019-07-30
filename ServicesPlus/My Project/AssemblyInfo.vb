@@ -33,8 +33,8 @@ Imports System.Runtime.CompilerServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.12.0")>
-<Assembly: AssemblyFileVersion("1.0.12.0")>
+<Assembly: AssemblyVersion("1.0.14.0")>
+<Assembly: AssemblyFileVersion("1.0.14.0")>
 
 
 <Assembly: NeutralResourcesLanguageAttribute("en")> 
