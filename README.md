@@ -5,7 +5,7 @@
 
 Advanced Windows Service Manager
 
-Task based services manager for Windows operating systems using advanced features in WMI (Windows Management Instruments) with .Net Framework 4.5
+Task based services manager for Windows operating systems using advanced features in WMI (Windows Management Instruments) with .Net Framework 4.7.1
 
 Services+ can connect to the local computer or a remote computer on the network with tabbed view.
 
@@ -27,4 +27,4 @@ Features:
 * Open Service Location
 * Install & Create Service (Coming Soon)
 
-For Binary downloads and changelog Go to Release Section.
+For Binary downloads and changelog go to the release section
