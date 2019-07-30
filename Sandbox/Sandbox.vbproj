@@ -158,9 +158,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Services+\Services+.vbproj">
+    <ProjectReference Include="..\ServicesPlus\ServicesPlus.vbproj">
       <Project>{0dc68659-bcf6-45ed-a154-776dae1fe800}</Project>
-      <Name>Services+</Name>
+      <Name>ServicesPlus</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

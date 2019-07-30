@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DC68659-BCF6-45ED-A154-776DAE1FE800}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ServicesPlus.My.MyApplication</StartupObject>
+    <RootNamespace>ServicesPlus</RootNamespace>
+    <AssemblyName>ServicesPlus</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Services+.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <CodeAnalysisRuleSet>ExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>41999,42016</NoWarn>
+    <DocumentationFile>ServicesPlus.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>41999,42016</NoWarn>
+    <DocumentationFile>ServicesPlus.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AppSettings.vb" />
+    <Compile Include="BLL\EditServiceModel.vb" />
+    <Compile Include="BLL\EventArgs\ServiceEventArgs.vb" />
+    <Compile Include="BLL\Impersonator.vb" />
+    <Compile Include="BLL\OM\ComboEntity.vb" />
+    <Compile Include="BLL\OM\CreateServiceEntity.vb" />
+    <Compile Include="BLL\OM\WmiMethod.vb" />
+    <Compile Include="BLL\OM\ControlEntry.vb" />
+    <Compile Include="BLL\OM\Identity.vb" />
+    <Compile Include="BLL\OM\ServerEntity.vb" />
+    <Compile Include="BLL\OM\ServiceCapability.vb" />
+    <Compile Include="BLL\OM\EditServiceEntry.vb" />
+    <Compile Include="BLL\OM\UpdateEntity.vb" />
+    <Compile Include="BLL\OM\WmiReturn.vb" />
+    <Compile Include="BLL\PathParser.vb" />
+    <Compile Include="BLL\ServiceManager.vb" />
+    <Compile Include="BLL\WMI.vb" />
+    <Compile Include="BLL\EventArgs\ActionEventArgs.vb" />
+    <Compile Include="BLL\OM\ServiceColumn.vb" />
+    <Compile Include="Classes\ListViewItemComparer.vb" />
+    <Compile Include="BLL\OM\SearchBy.vb" />
+    <Compile Include="Classes\LogonComparer.vb" />
+    <Compile Include="Controls\CueTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HLoader.Designer.vb">
+      <DependentUpon>HLoader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HLoader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HR.Designer.vb">
+      <DependentUpon>HR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HR.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListHeader.Designer.vb">
+      <DependentUpon>ListHeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListHeader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListViewNf.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Loading.Designer.vb">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Loading.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MetroButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RoundButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchBox.Designer.vb">
+      <DependentUpon>SearchBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerInfo.Designer.vb">
+      <DependentUpon>ServerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServicesList.Designer.vb">
+      <DependentUpon>ServicesList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServicesList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabEx\ExButton.designer.vb">
+      <DependentUpon>ExButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabEx\ExButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabButton.designer.vb">
+      <DependentUpon>TabButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabHeader.designer.vb">
+      <DependentUpon>TabHeader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabEx\TabHeader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToggelButton.Designer.vb">
+      <DependentUpon>ToggelButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToggelButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensions.vb" />
+    <Compile Include="Forms\FrmCreateService.Designer.vb">
+      <DependentUpon>FrmCreateService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCreateService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAddServer.Designer.vb">
+      <DependentUpon>FrmAddServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAddServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDelete.Designer.vb">
+      <DependentUpon>frmDelete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDelete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEditService.Designer.vb">
+      <DependentUpon>FrmEditService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEditService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmError.Designer.vb">
+      <DependentUpon>FrmError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHttpServer.Designer.vb">
+      <DependentUpon>FrmHttpServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHttpServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUpdate.Designer.vb">
+      <DependentUpon>FrmUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MetroModal\MetroModal.Designer.vb">
+      <DependentUpon>MetroModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MetroModal\MetroModal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MetroModal\frmModal.Designer.vb">
+      <DependentUpon>frmModal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MetroModal\frmModal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProperties.Designer.vb">
+      <DependentUpon>frmProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Glob.vb" />
+    <Compile Include="GlobalSuppressions.vb" />
+    <Compile Include="Forms\MainSplash.Designer.vb">
+      <DependentUpon>MainSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ModMain.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Controls\ServiceDescription.Designer.vb">
+      <DependentUpon>ServiceDescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServiceDescription.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BLL\OM\PerformanceEntity.vb" />
+    <Compile Include="BLL\OM\ServerInfoEntity.vb" />
+    <Compile Include="BLL\OM\Service.vb" />
+    <Compile Include="NativeMethods.vb" />
+    <Compile Include="Utils\Updater.vb" />
+    <Compile Include="Utils\Util.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\HLoader.resx">
+      <DependentUpon>HLoader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HR.resx">
+      <DependentUpon>HR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListHeader.resx">
+      <DependentUpon>ListHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListViewNf.resx">
+      <DependentUpon>ListViewNf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Loading.resx">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchBox.resx">
+      <DependentUpon>SearchBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerInfo.resx">
+      <DependentUpon>ServerInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServicesList.resx">
+      <DependentUpon>ServicesList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TabEx\TabButton.resx">
+      <DependentUpon>TabButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TabEx\TabHeader.resx">
+      <DependentUpon>TabHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToggelButton.resx">
+      <DependentUpon>ToggelButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCreateService.resx">
+      <DependentUpon>FrmCreateService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddServer.resx">
+      <DependentUpon>FrmAddServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDelete.resx">
+      <DependentUpon>frmDelete.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEditService.resx">
+      <DependentUpon>FrmEditService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmError.resx">
+      <DependentUpon>FrmError.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHttpServer.resx">
+      <DependentUpon>FrmHttpServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUpdate.resx">
+      <DependentUpon>FrmUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MetroModal\frmModal.resx">
+      <DependentUpon>frmModal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProperties.resx">
+      <DependentUpon>frmProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainSplash.resx">
+      <DependentUpon>MainSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServiceDescription.resx">
+      <DependentUpon>ServiceDescription.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ServicesPlus.exe.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BeforeDeploy.txt" />
+    <Content Include="Impersonator.txt" />
+    <Content Include="PostBuild.txt" />
+    <None Include="Resources\ShowSystem.png" />
+    <None Include="Resources\InstallService.png" />
+    <None Include="Resources\delete.png" />
+    <Content Include="Roadmap.txt" />
+    <Content Include="Version.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Resources\OpenFileLocation.png" />
+    <None Include="Resources\CopyFileLocation.png" />
+    <Content Include="Services+.ico" />
+    <None Include="Resources\ViewTile.png" />
+    <None Include="Resources\ViewDetails.png" />
+    <None Include="Resources\ViewList.png" />
+    <None Include="Resources\ViewIcon.png" />
+    <None Include="Resources\ViewWhite.png" />
+    <None Include="Resources\View.png" />
+    <None Include="Resources\filtering.png" />
+    <None Include="Resources\Sorting.png" />
+    <None Include="Resources\Grouping.png" />
+    <None Include="Resources\html.png" />
+    <None Include="Resources\csv.png" />
+    <None Include="Resources\exportBlue.png" />
+    <None Include="Resources\exportWhite.png" />
+    <None Include="Resources\Property.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\dropdown.png" />
+    <None Include="Resources\Restart.png" />
+    <None Include="Resources\Resume.png" />
+    <None Include="Resources\Pause.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Start.png" />
+    <None Include="Resources\filter-clear.png" />
+    <None Include="Resources\Server.png" />
+    <None Include="Resources\Loading.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\OM\Enums\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\mt.exe" -manifest "$(ProjectDir)$(TargetName).exe.manifest"  –outputresource:"$(TargetDir)$(TargetFileName)";#1</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
