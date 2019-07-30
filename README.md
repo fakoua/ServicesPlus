@@ -27,6 +27,4 @@ Features:
 * Open Service Location
 * Install & Create Service (Coming Soon)
 
-For Binary downloads and changelog:
-
-https://servicesplus.codeplex.com/
+For Binary downloads and changelog Go to Release Section.
