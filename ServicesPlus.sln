@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ServicesPlus", "ServicesPlus\ServicesPlus.vbproj", "{0DC68659-BCF6-45ED-A154-776DAE1FE800}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ServicesPlus.Wpf", "ServicesPlus.Wpf\ServicesPlus.Wpf.vbproj", "{63FC921F-1ADE-4ECF-801D-E9E078F7DC83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0DC68659-BCF6-45ED-A154-776DAE1FE800}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC68659-BCF6-45ED-A154-776DAE1FE800}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC68659-BCF6-45ED-A154-776DAE1FE800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63FC921F-1ADE-4ECF-801D-E9E078F7DC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63FC921F-1ADE-4ECF-801D-E9E078F7DC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63FC921F-1ADE-4ECF-801D-E9E078F7DC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63FC921F-1ADE-4ECF-801D-E9E078F7DC83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
