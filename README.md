@@ -1,4 +1,4 @@
-[![Build status](https://github.com/fakoua/ServicesPlus/workflows/Windows CI/badge.svg)](https://github.com/fakoua/ServicesPlus/actions)
+[![Build status](https://github.com/fakoua/ServicesPlus/workflows/Windows%20CI/badge.svg)](https://github.com/fakoua/ServicesPlus/actions)
 
 # Services+
 ============
