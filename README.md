@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/465ha93avpcbh125?svg=true)](https://ci.appveyor.com/project/fakoua/servicesplus)
+[![Build status](https://github.com/fakoua/ServicesPlus/workflows/Windows CI/badge.svg)](https://github.com/fakoua/ServicesPlus/actions)
 
 # Services+
 ============
