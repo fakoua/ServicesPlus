@@ -26,22 +26,22 @@
             Me.components = New System.ComponentModel.Container()
             Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
             Me.PicIcon = New System.Windows.Forms.PictureBox()
+            Me.SearchBox1 = New ServicesPlus.Controls.SearchBox()
             Me.PanelMenu = New System.Windows.Forms.Panel()
             Me.MenuGroupView = New System.Windows.Forms.MenuStrip()
             Me.GroupByToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.FlowControl = New System.Windows.Forms.FlowLayoutPanel()
-            Me.PanelCaption = New System.Windows.Forms.Panel()
-            Me.lblCaption = New System.Windows.Forms.Label()
-            Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-            Me.SearchBox1 = New ServicesPlus.Controls.SearchBox()
             Me.BtnStart = New ServicesPlus.Controls.RoundButton()
             Me.btnStop = New ServicesPlus.Controls.RoundButton()
             Me.btnPause = New ServicesPlus.Controls.RoundButton()
             Me.btnResume = New ServicesPlus.Controls.RoundButton()
             Me.btnRestart = New ServicesPlus.Controls.RoundButton()
             Me.ToggelButton1 = New ServicesPlus.Controls.ToggelButton()
+            Me.PanelCaption = New System.Windows.Forms.Panel()
             Me.BtnInstall = New ServicesPlus.Controls.RoundButton()
+            Me.lblCaption = New System.Windows.Forms.Label()
+            Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
             Me.TableLayoutPanel1.SuspendLayout()
             CType(Me.PicIcon, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.PanelMenu.SuspendLayout()
@@ -85,6 +85,17 @@
             Me.PicIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
             Me.PicIcon.TabIndex = 1
             Me.PicIcon.TabStop = False
+            '
+            'SearchBox1
+            '
+            Me.SearchBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(242, Byte), Integer))
+            Me.SearchBox1.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.SearchBox1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.SearchBox1.Location = New System.Drawing.Point(248, 8)
+            Me.SearchBox1.Margin = New System.Windows.Forms.Padding(3, 8, 3, 5)
+            Me.SearchBox1.Name = "SearchBox1"
+            Me.SearchBox1.Size = New System.Drawing.Size(220, 29)
+            Me.SearchBox1.TabIndex = 2
             '
             'PanelMenu
             '
@@ -143,42 +154,9 @@
             Me.FlowControl.Size = New System.Drawing.Size(341, 41)
             Me.FlowControl.TabIndex = 5
             '
-            'PanelCaption
-            '
-            Me.PanelCaption.Controls.Add(Me.BtnInstall)
-            Me.PanelCaption.Controls.Add(Me.lblCaption)
-            Me.PanelCaption.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.PanelCaption.Location = New System.Drawing.Point(40, 0)
-            Me.PanelCaption.Margin = New System.Windows.Forms.Padding(0)
-            Me.PanelCaption.Name = "PanelCaption"
-            Me.PanelCaption.Size = New System.Drawing.Size(205, 42)
-            Me.PanelCaption.TabIndex = 7
-            '
-            'lblCaption
-            '
-            Me.lblCaption.AutoSize = True
-            Me.lblCaption.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.lblCaption.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
-            Me.lblCaption.Location = New System.Drawing.Point(3, 10)
-            Me.lblCaption.Margin = New System.Windows.Forms.Padding(3, 13, 3, 0)
-            Me.lblCaption.Name = "lblCaption"
-            Me.lblCaption.Size = New System.Drawing.Size(0, 21)
-            Me.lblCaption.TabIndex = 1
-            '
-            'SearchBox1
-            '
-            Me.SearchBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(242, Byte), Integer))
-            Me.SearchBox1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.SearchBox1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.SearchBox1.Location = New System.Drawing.Point(248, 8)
-            Me.SearchBox1.Margin = New System.Windows.Forms.Padding(3, 8, 3, 5)
-            Me.SearchBox1.Name = "SearchBox1"
-            Me.SearchBox1.Size = New System.Drawing.Size(220, 29)
-            Me.SearchBox1.TabIndex = 2
-            '
             'BtnStart
             '
-            Me.BtnStart.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.Start
+            Me.BtnStart.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.n_play
             Me.BtnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.BtnStart.FlatAppearance.BorderSize = 0
             Me.BtnStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -194,7 +172,7 @@
             '
             'btnStop
             '
-            Me.btnStop.BackgroundImage = Global.ServicesPlus.My.Resources.Resources._Stop
+            Me.btnStop.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.n_stop
             Me.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.btnStop.FlatAppearance.BorderSize = 0
             Me.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -210,7 +188,7 @@
             '
             'btnPause
             '
-            Me.btnPause.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.Pause
+            Me.btnPause.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.n_pause
             Me.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.btnPause.FlatAppearance.BorderSize = 0
             Me.btnPause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -226,7 +204,7 @@
             '
             'btnResume
             '
-            Me.btnResume.BackgroundImage = Global.ServicesPlus.My.Resources.Resources._Resume
+            Me.btnResume.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.n_resume
             Me.btnResume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.btnResume.FlatAppearance.BorderSize = 0
             Me.btnResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -242,7 +220,7 @@
             '
             'btnRestart
             '
-            Me.btnRestart.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.Restart
+            Me.btnRestart.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.n_restart
             Me.btnRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.btnRestart.FlatAppearance.BorderSize = 0
             Me.btnRestart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -270,9 +248,20 @@
             Me.ToolTip1.SetToolTip(Me.ToggelButton1, "Show System Components")
             Me.ToggelButton1.UncheckedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(242, Byte), Integer))
             '
+            'PanelCaption
+            '
+            Me.PanelCaption.Controls.Add(Me.BtnInstall)
+            Me.PanelCaption.Controls.Add(Me.lblCaption)
+            Me.PanelCaption.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.PanelCaption.Location = New System.Drawing.Point(40, 0)
+            Me.PanelCaption.Margin = New System.Windows.Forms.Padding(0)
+            Me.PanelCaption.Name = "PanelCaption"
+            Me.PanelCaption.Size = New System.Drawing.Size(205, 42)
+            Me.PanelCaption.TabIndex = 7
+            '
             'BtnInstall
             '
-            Me.BtnInstall.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.InstallService
+            Me.BtnInstall.BackgroundImage = Global.ServicesPlus.My.Resources.Resources.n_install
             Me.BtnInstall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
             Me.BtnInstall.FlatAppearance.BorderSize = 0
             Me.BtnInstall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -284,6 +273,17 @@
             Me.BtnInstall.TabIndex = 2
             Me.ToolTip1.SetToolTip(Me.BtnInstall, "Install new service")
             Me.BtnInstall.UseVisualStyleBackColor = True
+            '
+            'lblCaption
+            '
+            Me.lblCaption.AutoSize = True
+            Me.lblCaption.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.lblCaption.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+            Me.lblCaption.Location = New System.Drawing.Point(3, 10)
+            Me.lblCaption.Margin = New System.Windows.Forms.Padding(3, 13, 3, 0)
+            Me.lblCaption.Name = "lblCaption"
+            Me.lblCaption.Size = New System.Drawing.Size(0, 21)
+            Me.lblCaption.TabIndex = 1
             '
             'ListHeader
             '

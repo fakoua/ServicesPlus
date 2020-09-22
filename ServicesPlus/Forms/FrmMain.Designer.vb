@@ -1,12 +1,12 @@
 ﻿Imports ServicesPlus.Controls.TabEx
 
 Namespace Forms
-    <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+    <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class FrmMain
         Inherits System.Windows.Forms.Form
 
         'Form overrides dispose to clean up the component list.
-        <System.Diagnostics.DebuggerNonUserCode()> _
+        <System.Diagnostics.DebuggerNonUserCode()>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
             Try
                 If disposing AndAlso components IsNot Nothing Then
@@ -23,9 +23,9 @@ Namespace Forms
         'NOTE: The following procedure is required by the Windows Form Designer
         'It can be modified using the Windows Form Designer.  
         'Do not modify it using the code editor.
-        <System.Diagnostics.DebuggerStepThrough()> _
+        <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
             Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
             Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ErrorLogsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,8 +34,6 @@ Namespace Forms
             Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.MainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-            Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-            Me.HttpServerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.TestIdentityToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -46,7 +44,7 @@ Namespace Forms
             'MenuStrip1
             '
             Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.MainToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.TestToolStripMenuItem})
+            Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.MainToolStripMenuItem, Me.TestToolStripMenuItem})
             Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
             Me.MenuStrip1.Name = "MenuStrip1"
             Me.MenuStrip1.Size = New System.Drawing.Size(776, 25)
@@ -98,19 +96,6 @@ Namespace Forms
             Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
             Me.AboutToolStripMenuItem.Text = "About"
             '
-            'ToolsToolStripMenuItem
-            '
-            Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HttpServerToolStripMenuItem})
-            Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-            Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 21)
-            Me.ToolsToolStripMenuItem.Text = "Tools"
-            '
-            'HttpServerToolStripMenuItem
-            '
-            Me.HttpServerToolStripMenuItem.Name = "HttpServerToolStripMenuItem"
-            Me.HttpServerToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-            Me.HttpServerToolStripMenuItem.Text = "Http Server"
-            '
             'TestToolStripMenuItem
             '
             Me.TestToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TestIdentityToolStripMenuItem})
@@ -121,7 +106,7 @@ Namespace Forms
             'TestIdentityToolStripMenuItem
             '
             Me.TestIdentityToolStripMenuItem.Name = "TestIdentityToolStripMenuItem"
-            Me.TestIdentityToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+            Me.TestIdentityToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
             Me.TestIdentityToolStripMenuItem.Text = "Test Identity"
             '
             'TabControl1
@@ -180,7 +165,5 @@ Namespace Forms
         Friend WithEvents ServicesmscToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
         Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-        Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
-        Friend WithEvents HttpServerToolStripMenuItem As ToolStripMenuItem
     End Class
 End Namespace

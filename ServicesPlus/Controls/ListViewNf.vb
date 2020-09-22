@@ -175,6 +175,10 @@ Namespace Controls
         Sub UpdateService(service As Service)
             Trace()
             Dim selectedService = GetSelectedService()
+            If selectedService Is Nothing Then
+                RaiseEvent OnAction(Me, New ActionEventArgs With {.Action = ServiceAction.Refresh})
+                Return
+            End If
             Dim itemIndex =
                     Services.FindIndex(
                         Function(p) p.ServiceName.ToUpperInvariant = selectedService.ServiceName.ToUpperInvariant)
@@ -443,6 +447,7 @@ Namespace Controls
             Me.MiResumeService = New System.Windows.Forms.ToolStripMenuItem()
             Me.MiRestartService = New System.Windows.Forms.ToolStripMenuItem()
             Me.MiS05 = New System.Windows.Forms.ToolStripSeparator()
+            Me.MiEditService = New System.Windows.Forms.ToolStripMenuItem()
             Me.MiDeleteService = New System.Windows.Forms.ToolStripMenuItem()
             Me.MiS01 = New System.Windows.Forms.ToolStripSeparator()
             Me.MiRefreshService = New System.Windows.Forms.ToolStripMenuItem()
@@ -480,7 +485,6 @@ Namespace Controls
             Me.MiSortServiceType = New System.Windows.Forms.ToolStripMenuItem()
             Me.MiGroupByServiceType = New System.Windows.Forms.ToolStripMenuItem()
             Me.MiFilterByServiceType = New System.Windows.Forms.ToolStripMenuItem()
-            Me.MiEditService = New System.Windows.Forms.ToolStripMenuItem()
             Me.CmService.SuspendLayout()
             Me.CmName.SuspendLayout()
             Me.CmLogon.SuspendLayout()
@@ -571,7 +575,7 @@ Namespace Controls
             'MiStartService
             '
             Me.MiStartService.Enabled = False
-            Me.MiStartService.Image = Global.ServicesPlus.My.Resources.Resources.Start
+            Me.MiStartService.Image = Global.ServicesPlus.My.Resources.Resources.n_play
             Me.MiStartService.Name = "MiStartService"
             Me.MiStartService.Size = New System.Drawing.Size(156, 22)
             Me.MiStartService.Text = Global.ServicesPlus.My.Resources.Resources.TextStart
@@ -579,7 +583,7 @@ Namespace Controls
             'MiStopService
             '
             Me.MiStopService.Enabled = False
-            Me.MiStopService.Image = Global.ServicesPlus.My.Resources.Resources._Stop
+            Me.MiStopService.Image = Global.ServicesPlus.My.Resources.Resources.n_stop
             Me.MiStopService.Name = "MiStopService"
             Me.MiStopService.Size = New System.Drawing.Size(156, 22)
             Me.MiStopService.Text = Global.ServicesPlus.My.Resources.Resources.TextStop
@@ -587,7 +591,7 @@ Namespace Controls
             'MiPauseService
             '
             Me.MiPauseService.Enabled = False
-            Me.MiPauseService.Image = Global.ServicesPlus.My.Resources.Resources.Pause
+            Me.MiPauseService.Image = Global.ServicesPlus.My.Resources.Resources.n_pause
             Me.MiPauseService.Name = "MiPauseService"
             Me.MiPauseService.Size = New System.Drawing.Size(156, 22)
             Me.MiPauseService.Text = Global.ServicesPlus.My.Resources.Resources.TextPause
@@ -595,7 +599,7 @@ Namespace Controls
             'MiResumeService
             '
             Me.MiResumeService.Enabled = False
-            Me.MiResumeService.Image = Global.ServicesPlus.My.Resources.Resources._Resume
+            Me.MiResumeService.Image = Global.ServicesPlus.My.Resources.Resources.n_resume
             Me.MiResumeService.Name = "MiResumeService"
             Me.MiResumeService.Size = New System.Drawing.Size(156, 22)
             Me.MiResumeService.Text = Global.ServicesPlus.My.Resources.Resources.TextResume
@@ -603,7 +607,7 @@ Namespace Controls
             'MiRestartService
             '
             Me.MiRestartService.Enabled = False
-            Me.MiRestartService.Image = Global.ServicesPlus.My.Resources.Resources.Restart
+            Me.MiRestartService.Image = Global.ServicesPlus.My.Resources.Resources.n_restart
             Me.MiRestartService.Name = "MiRestartService"
             Me.MiRestartService.Size = New System.Drawing.Size(156, 22)
             Me.MiRestartService.Text = Global.ServicesPlus.My.Resources.Resources.TextRestart
@@ -612,6 +616,15 @@ Namespace Controls
             '
             Me.MiS05.Name = "MiS05"
             Me.MiS05.Size = New System.Drawing.Size(153, 6)
+            '
+            'MiEditService
+            '
+            Me.MiEditService.Enabled = False
+            Me.MiEditService.ForeColor = System.Drawing.Color.Red
+            Me.MiEditService.Image = Global.ServicesPlus.My.Resources.Resources.n_edit
+            Me.MiEditService.Name = "MiEditService"
+            Me.MiEditService.Size = New System.Drawing.Size(156, 22)
+            Me.MiEditService.Text = Global.ServicesPlus.My.Resources.Resources.TextEdit
             '
             'MiDeleteService
             '
@@ -729,7 +742,7 @@ Namespace Controls
             '
             Me.ToolStripMenuItem12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-            Me.ToolStripMenuItem12.Size = New System.Drawing.Size(152, 22)
+            Me.ToolStripMenuItem12.Size = New System.Drawing.Size(126, 22)
             Me.ToolStripMenuItem12.Text = Global.ServicesPlus.My.Resources.Resources.TextShowAll
             '
             'CmStartMode
@@ -868,14 +881,6 @@ Namespace Controls
             Me.MiFilterByServiceType.Size = New System.Drawing.Size(167, 22)
             Me.MiFilterByServiceType.Text = Global.ServicesPlus.My.Resources.Resources.TextFilter
             '
-            'MiEdit
-            '
-            Me.MiEditService.Enabled = False
-            Me.MiEditService.ForeColor = System.Drawing.Color.Red
-            Me.MiEditService.Name = "MiEdit"
-            Me.MiEditService.Size = New System.Drawing.Size(156, 22)
-            Me.MiEditService.Text = Global.ServicesPlus.My.Resources.Resources.TextEdit
-            '
             'ListViewNf
             '
             Me.AllowColumnReorder = True
@@ -884,7 +889,6 @@ Namespace Controls
             Me.Dock = System.Windows.Forms.DockStyle.Fill
             Me.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.FullRowSelect = True
-            Me.HideSelection = False
             Me.LargeImageList = Me.ImageListLarge
             Me.Location = New System.Drawing.Point(247, 42)
             Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)

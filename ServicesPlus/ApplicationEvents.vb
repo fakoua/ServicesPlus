@@ -24,7 +24,5 @@ Namespace My
             Modules.ModMain.PushLog(e.Exception)
         End Sub
     End Class
-
-
 End Namespace
 

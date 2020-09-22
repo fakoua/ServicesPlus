@@ -400,6 +400,13 @@
     <None Include="Resources\ShowSystem.png" />
     <None Include="Resources\InstallService.png" />
     <None Include="Resources\delete.png" />
+    <None Include="Resources\n_edit.png" />
+    <None Include="Resources\n_install.png" />
+    <None Include="Resources\n_pause.png" />
+    <None Include="Resources\n_play.png" />
+    <None Include="Resources\n_restart.png" />
+    <None Include="Resources\n_resume.png" />
+    <None Include="Resources\n_stop.png" />
     <Content Include="Roadmap.txt" />
     <Content Include="Version.xml">
       <SubType>Designer</SubType>
