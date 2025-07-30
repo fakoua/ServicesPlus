@@ -14,12 +14,12 @@
         Public Sub New(userName As String, password As String)
             If Not String.IsNullOrEmpty(userName) AndAlso userName.Contains("\") Then
                 Dim pos = userName.IndexOf("\")
-                Me._Domain = userName.Substring(0, pos)
-                Me._UserName = userName.Substring(pos + 1)
+                Me.Domain = userName.Substring(0, pos)
+                Me.UserName = userName.Substring(pos + 1)
             Else
-                Me._UserName = userName
+                Me.UserName = userName
             End If
-            Me._Password = password
+            Me.Password = password
         End Sub
 
         ''' <summary>
@@ -30,9 +30,9 @@
         ''' <param name="domain">Domain name</param>
         ''' <remarks></remarks>
         Public Sub New(userName As String, password As String, domain As String)
-            Me._UserName = userName
-            Me._Password = password
-            Me._Domain = domain
+            Me.UserName = userName
+            Me.Password = password
+            Me.Domain = domain
         End Sub
 
         ''' <summary>
